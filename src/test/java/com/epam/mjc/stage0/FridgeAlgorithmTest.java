@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FridgeAlgorithmTest {
-
     FridgeAlgorithm fridgeAlgorithm = new FridgeAlgorithm();
 
     @Test
