@@ -2,15 +2,39 @@ package com.epam.mjc.stage0;
 
 import com.epam.mjc.stage0.utils.Fridge;
 
-public class FridgeAlgorithm {
+import java.util.LinkedList;
 
-    /**
-     * This is a first task in this module. You need to get milk from a fridge =)
-     * <p>
-     * Call the methods of the Fridge object inside the fridgeAlgorithm method in the required logical order.
-     * P.S All methods of interaction with the fridge can be found inside the {@see Fridge} class.
-     */
-    public void fridgeAlgorithm(Fridge fridge) {
+public class FridgeAlgorithm implements Fridge {
 
+    private final LinkedList<Actions> actionsQueue = new LinkedList<>();
+
+    @Override
+    public void close() {
+        actionsQueue.add(Actions.CLOSE);
     }
+
+    @Override
+    public void open() {
+        actionsQueue.add(Actions.OPEN);
+    }
+
+    @Override
+    public void getMilk() {
+        actionsQueue.add(Actions.GET_MILK);
+    }
+
+    public LinkedList<Actions> getActionsQueue() {
+        return actionsQueue;
+    }
+    public void fridgeAlgorithm(Fridge fridge) {
+        fridge.open();
+        fridge.getMilk();
+        fridge.close();
+    }
+    public enum Actions {
+        OPEN,
+        CLOSE,
+        GET_MILK
+    }
+
 }
