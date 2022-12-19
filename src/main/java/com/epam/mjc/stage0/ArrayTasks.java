@@ -8,6 +8,7 @@ public class ArrayTasks {
         seasonsArray[2] = "summer";
         seasonsArray[3] = "autumn";
         return seasonsArray;
+
     }
 
     public int[] generateNumbers(int length) {
